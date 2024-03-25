@@ -68,7 +68,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -195,8 +195,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
-  m_Material: {fileID: 0}
+  m_GravityScale: 3
+  m_Material: {fileID: 6200000, guid: f59ab5a301fe6bd4c834bddcd3f6d162, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -254,6 +254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e5150040fd48a4d9552bda65c4985b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 1000
+  playerSpeed: 10
   player: {fileID: 8794689815244487464}
-  jumpSpeed: 5
+  jumpSpeed: 15
