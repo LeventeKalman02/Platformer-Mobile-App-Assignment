@@ -35,10 +35,15 @@ public class PlayerMovement : MonoBehaviour
     private void ProcessJump()
     {
         if (!capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        {
+            //Debug.Log("Grounded");
             return;
+        }
+            
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity += new Vector2(0.0f, jumpSpeed);
+            //Debug.Log("Jumped");
         }
     }
 }

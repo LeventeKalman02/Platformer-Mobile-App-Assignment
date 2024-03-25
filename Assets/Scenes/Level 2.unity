@@ -37420,13 +37420,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3735705441704324049, guid: d653e5082c9d64e428885fbda843019f, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 35726103610879123, guid: d653e5082c9d64e428885fbda843019f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 440
+      objectReference: {fileID: 0}
     - target: {fileID: 313779266743469801, guid: d653e5082c9d64e428885fbda843019f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.99
+      value: 19.11
       objectReference: {fileID: 0}
     - target: {fileID: 313779266743469801, guid: d653e5082c9d64e428885fbda843019f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 313779266743469801, guid: d653e5082c9d64e428885fbda843019f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37460,6 +37468,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 673216731731051838, guid: d653e5082c9d64e428885fbda843019f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -867
+      objectReference: {fileID: 0}
+    - target: {fileID: 673216731731051838, guid: d653e5082c9d64e428885fbda843019f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 440
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409979011284942214, guid: d653e5082c9d64e428885fbda843019f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 440
+      objectReference: {fileID: 0}
     - target: {fileID: 3098062066574510961, guid: d653e5082c9d64e428885fbda843019f, type: 3}
       propertyPath: m_GravityScale
       value: 3
@@ -37471,6 +37491,10 @@ PrefabInstance:
     - target: {fileID: 3900630701867959011, guid: d653e5082c9d64e428885fbda843019f, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357485038792436818, guid: d653e5082c9d64e428885fbda843019f, type: 3}
+      propertyPath: orthographic size
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8794689815244487464, guid: d653e5082c9d64e428885fbda843019f, type: 3}
       propertyPath: m_Name

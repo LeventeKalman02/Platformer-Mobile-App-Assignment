@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameControllerScript : MonoBehaviour
 {
-    private int playerLives = 3;
+    public int playerLives = 3;
     private int coinsCollected;
 
     private void Awake()
@@ -22,7 +22,7 @@ public class GameControllerScript : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Debug.Log("Player Lives: " + playerLives);
         Debug.Log("Coins Collected: " + coinsCollected);
@@ -50,7 +50,7 @@ public class GameControllerScript : MonoBehaviour
     {
         playerLives--;
         Debug.Log("Player Lives: " + playerLives);
-        ReloadCurrentLevel();
+        ReloadCurrentLevel();      
     }
 
     public void ReloadCurrentLevel()
