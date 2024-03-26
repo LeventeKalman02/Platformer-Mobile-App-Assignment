@@ -7,18 +7,11 @@ public class GameControllerScript : MonoBehaviour
 {
     public int playerLives = 3;
     private int coinsCollected;
+    public GameOverScript gameOverScreen;
 
     private void Awake()
     {
-        int numGameControllers = FindObjectsOfType<GameControllerScript>().Length;
-        if (numGameControllers > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+        DestroyObject();
     }
 
     // Start is called before the first frame update
@@ -42,7 +35,7 @@ public class GameControllerScript : MonoBehaviour
         }
         else
         {
-            ResetGameSession();
+            GameOver();
         }
     }
 
@@ -57,17 +50,37 @@ public class GameControllerScript : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+        FindAnyObjectByType<GameOverScript>().Setup(coinsCollected);
     }
 
-    public void ResetGameSession()
+    public void GameOver()
     {
-        SceneManager.LoadScene(0);
-        Destroy(gameObject);
+        //gameOverScreen.Setup(coinsCollected);
+        FindAnyObjectByType<GameOverScript>().Setup(coinsCollected);   
+    }
+
+    //public void ResetGameSession()
+    //{
+    //    SceneManager.LoadScene(0);
+    //    Destroy(gameObject);
+    //}
+
+    public void DestroyObject()
+    {
+        int numGameControllers = FindObjectsOfType<GameControllerScript>().Length;
+        if (numGameControllers > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadSceneAsync(currentSceneIndex + 1);
     }
 }
