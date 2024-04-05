@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameControllerScript : MonoBehaviour
 {
     public int playerLives = 3;
-    private int coinsCollected;
-    public GameOverScript gameOverScreen;
+    public int coinsCollected;
 
     private void Awake()
     {
@@ -35,7 +34,7 @@ public class GameControllerScript : MonoBehaviour
         }
         else
         {
-            GameOver();
+            ResetGameSession();
         }
     }
 
@@ -50,20 +49,13 @@ public class GameControllerScript : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
-        FindAnyObjectByType<GameOverScript>().Setup(coinsCollected);
     }
 
-    public void GameOver()
+    public void ResetGameSession()
     {
-        //gameOverScreen.Setup(coinsCollected);
-        FindAnyObjectByType<GameOverScript>().Setup(coinsCollected);   
+        SceneManager.LoadScene(0);
+        Destroy(gameObject);
     }
-
-    //public void ResetGameSession()
-    //{
-    //    SceneManager.LoadScene(0);
-    //    Destroy(gameObject);
-    //}
 
     public void DestroyObject()
     {

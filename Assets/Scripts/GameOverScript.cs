@@ -6,17 +6,33 @@ using UnityEngine.UI;
 
 public class GameOverScript : MonoBehaviour
 {
+    private PlayerMovement player;
+    private GameControllerScript gameController;
     public Text coinsText;
+    [SerializeField]private GameObject gameOverScreen;
 
-    public void Setup(int coins)
+    private void Awake()
     {
-        gameObject.SetActive(true);
-        Debug.Log("Game Over Screen");
+        //find reference to player movement script
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        gameController = FindAnyObjectByType<GameControllerScript>();
+    }
+
+    //make the game over screen active whenever you go through the last portal.
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //set the game over screen to active
+        gameOverScreen.SetActive(true);
+        //make the player stop moving 
+        player.isAlive = false;
+        //get the coins from the game controller script
+        int coins = gameController.coinsCollected;
         coinsText.text = coins.ToString() + " Coins";
     }
-    public void ResetGameSession()
+
+    //reset the game session when button is clicked
+    public void RestartGame()
     {
-        SceneManager.LoadScene(0);
-        FindAnyObjectByType<GameControllerScript>().DestroyObject();
+        gameController.ResetGameSession();
     }
 }

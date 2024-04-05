@@ -7,7 +7,7 @@ public class Obstacle : MonoBehaviour
     //If player collides with obstacle, lose a life
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && other.isTrigger == false)
         {
             FindObjectOfType<GameControllerScript>().ProcessDeath();
         }
